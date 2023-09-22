@@ -1,4 +1,4 @@
-package com.vaibhav.lld.design.SchemaDesign.v2.ver2;
+package com.vaibhav.lld.design.SchemaDesign.basics.v2.ver2;
 
 public class Course {
     private String name;

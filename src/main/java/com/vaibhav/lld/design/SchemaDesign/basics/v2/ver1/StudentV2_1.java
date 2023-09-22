@@ -1,4 +1,4 @@
-package com.vaibhav.lld.design.SchemaDesign.v2.ver1;
+package com.vaibhav.lld.design.SchemaDesign.basics.v2.ver1;
 
 public class StudentV2_1{
     private String id;

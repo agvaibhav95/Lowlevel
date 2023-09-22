@@ -1,4 +1,4 @@
-package com.vaibhav.lld.design.SchemaDesign.v4;
+package com.vaibhav.lld.design.SchemaDesign.basics.v4;
 
 public class Exam {
     private String id;
