@@ -1,0 +1,29 @@
+ReScaler will provide different modules for students to learn i.e. Data Structures, Algorithms, etc.
+Each student can enroll for multiple modules.
+Each module will have multiple exams.
+Each exam has a name and a duration.
+One exam can be part of multiple modules.
+For each exam, the student will be given a score.
+
+
+
+
+student -->modules---> exam
+
+student -->modules
+M:N
+
+modules--> modules
+m:N
+
+so there will be a table for studentModule Mapping
+id  sid  modId
+
+moduleExam mapping
+id modId eid
+
+to identify exam and score for student
+student_mod_exam table
+
+id sid modId eId
+
