@@ -1,0 +1,46 @@
+Design a pen
+
+ask what is a pen?
+which has a nib and body and which can write is a pen
+
+so,
+we will have
+
+1. CUrrent requirements
+diff types of pen(GEL,BALLFOUNTAIN)
+all pen except fountain will have refill
+ball pen will have ball refill
+gen pen will have gel pen refill
+differnt ink colors
+fountain will have ink
+every refill have ink and nib
+some pens can write same
+some pens can write differntly
+
+
+
+2. Future requirements
+
+
+3.Behaviours
+write--> diff writing style for each pen
+refill--> not every pen can have refill
+
+
+
+=================================================================
+
+requirements from scaler
+
+A pen is anything that can write.
+Pen can be Gel, Ball, Fountain, Marker.
+Ball Pen and Gel Pen have a Ball Pen Refill and a Gel Pen Refill respectively to write.
+A refil has a tip and an ink.
+Ink can be of different colour
+A fountain pen has an Ink.
+Refil has a radius.
+For fountain pen, its tip has a radius.
+Each pen can write in a different way.
+Some pens write in the same way.
+Every pen has a brand and a name.
+Some pens may allow refilling while others might not.
