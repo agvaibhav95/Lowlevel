@@ -10,7 +10,6 @@ import lombok.Getter;
 public class Refill {
     private Nib nib;
     private INK ink;
-    private double radius;
     private RefillType type;
     private boolean isRefillable;
 }

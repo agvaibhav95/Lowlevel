@@ -5,7 +5,10 @@ import com.vaibhav.lld.design.SchemaDesign.pen.WritingBehaviour;
 import com.vaibhav.lld.design.SchemaDesign.pen.constants.INK;
 import com.vaibhav.lld.design.SchemaDesign.pen.constants.PenType;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Nib;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+@Getter
 public class FountainPen extends Pen {
     private Nib nib;
     private INK ink;

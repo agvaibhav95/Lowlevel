@@ -10,7 +10,7 @@ public interface Refillable {
     //diff paramters
     //ball pen will have ball refill not gel refill
     // so we can define getRefill here or traditional way where class for refillfactory will provide refill obj
-    public Refill getRefill(Nib nib, INK ink, double radius,boolean refillable);
+    public Refill getRefill(Nib nib, INK ink,boolean refillable);
     public boolean isRefillable();
     //as ball pen could be use and throw we can not change refill for them
 }
