@@ -25,5 +25,5 @@ id modId eid
 to identify exam and score for student
 student_mod_exam table
 
-id sid modId eId
+id sid modId eId score
 
