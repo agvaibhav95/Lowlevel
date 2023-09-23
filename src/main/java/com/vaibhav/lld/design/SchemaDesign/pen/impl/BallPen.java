@@ -9,27 +9,24 @@ import com.vaibhav.lld.design.SchemaDesign.pen.constants.RefillType;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Nib;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Refill;
 
-public class GelPen extends Pen implements Refillable {
+import java.sql.Ref;
+
+public class BallPen extends Pen implements Refillable {
+
     private Refill refill;
-    public GelPen(String name, double cost, WritingBehaviour writingBehaviour, INK ink,double radius,Nib nib,boolean refillable) {
-        super(name, cost, PenType.GELPEN, writingBehaviour);
+    public BallPen(String name, double cost, PenType type, WritingBehaviour writingBehaviour,Nib nib,double radius,INK ink,boolean refillable) {
+        super(name, cost, type, writingBehaviour);
         this.refill=getRefill(nib,ink,radius,refillable);
     }
 
-
-//    @Override
-//    public void write() {
-//        System.out.println("gel pen is so smooth");
-//    }
-
     @Override
     public void changeRefill(Refill refill) {
-    this.refill=getRefill(refill.getNib(),refill.getInk(),refill.getRadius(),refill.isRefillable());
+        this.refill=getRefill(refill.getNib(), refill.getInk(),refill.getRadius(),refill.isRefillable());
     }
-//factory method
+
     @Override
-    public Refill getRefill(Nib nib,INK ink,double radius,boolean refillable) {
-        return new Refill(nib,ink,radius, RefillType.GELPENREFILL,refillable) ;
+    public Refill getRefill(Nib nib, INK ink, double radius,boolean refillable) {
+        return  new Refill(nib,ink,radius, RefillType.BALLPENREFILL,refillable);
     }
 
     @Override

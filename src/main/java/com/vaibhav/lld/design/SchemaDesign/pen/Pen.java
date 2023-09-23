@@ -1,9 +1,12 @@
 package com.vaibhav.lld.design.SchemaDesign.pen;
 
 import com.vaibhav.lld.design.SchemaDesign.pen.constants.PenType;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public abstract class Pen {
-    private String name;
+
+     String name;
     private double cost;
     private PenType type;
     //writing strategy as some pens can write same and some can write diff
