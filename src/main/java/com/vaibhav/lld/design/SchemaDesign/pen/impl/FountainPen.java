@@ -7,8 +7,10 @@ import com.vaibhav.lld.design.SchemaDesign.pen.constants.PenType;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Nib;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 @Getter
+
 public class FountainPen extends Pen {
     private Nib nib;
     private INK ink;

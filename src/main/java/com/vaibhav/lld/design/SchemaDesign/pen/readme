@@ -44,3 +44,21 @@ Each pen can write in a different way.
 Some pens write in the same way.
 Every pen has a brand and a name.
 Some pens may allow refilling while others might not.
+
+
+ what are the issues?
+ object creation is complex-->(FACTORY)
+ subclasses are used to create object-->(BUILDER)
+ BUILDER
+ what is the most easy way for builder
+ WE can use lombok but when we add @Builder at GElpen we are getting complie error
+ because inheritance is used so builder annotation doesnt work with inheritance
+
+ //we can use superBuilder annotation but that is experimental
+
+ // subclass are used to create object
+then we have to implement factory design pattern --> simple factory
+
+1. all fields in paramter input
+2. DTO but polluted for fountain
+3. builder with factory-- implemented

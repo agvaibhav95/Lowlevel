@@ -9,9 +9,11 @@ import com.vaibhav.lld.design.SchemaDesign.pen.constants.RefillType;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Nib;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Refill;
 import lombok.Getter;
+import lombok.experimental.SuperBuilder;
 
 
 @Getter
+//@SuperBuilder
 public class BallPen extends Pen implements Refillable {
 
     private Refill refill;
@@ -29,7 +31,10 @@ public class BallPen extends Pen implements Refillable {
 
     @Override
     public Refill getRefill(Nib nib, INK ink,boolean refillable) {
-        return  new Refill(nib,ink, RefillType.BALLPENREFILL,refillable);
+          return Refill.builder().nib(nib)
+                .ink(ink)
+                .type(RefillType.BALLPENREFILL)
+                .isRefillable(refillable).build();
     }
 
     @Override
