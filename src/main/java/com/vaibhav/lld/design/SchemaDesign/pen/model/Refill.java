@@ -14,6 +14,12 @@ public class Refill {
     private RefillType type;
     private boolean isRefillable;
 
+    //why is refillable bcoz there can be a useandThrow pen
+    // why not a class for that--> yes we can but that pen will be gel pr ball pen
+    //this wont effect anything creating another class
+    // but we might end up in tying behaviour to class
+    // it can lead to class explosion then
+
     private Refill(Nib nib, INK ink, RefillType type, boolean isRefillable) {
         this.ink = ink;
         this.nib = nib;
