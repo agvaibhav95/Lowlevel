@@ -9,7 +9,6 @@ import com.vaibhav.lld.design.SchemaDesign.pen.constants.RefillType;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Nib;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Refill;
 import lombok.Getter;
-import lombok.experimental.SuperBuilder;
 
 
 @Getter

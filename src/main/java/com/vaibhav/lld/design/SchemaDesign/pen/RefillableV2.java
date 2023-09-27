@@ -1,7 +1,5 @@
 package com.vaibhav.lld.design.SchemaDesign.pen;
 
-import com.vaibhav.lld.design.SchemaDesign.pen.constants.INK;
-import com.vaibhav.lld.design.SchemaDesign.pen.model.Nib;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Refill;
 
 public interface RefillableV2 {

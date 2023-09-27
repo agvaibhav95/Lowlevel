@@ -2,8 +2,6 @@ package com.vaibhav.lld.design.SchemaDesign.pen;
 
 import com.vaibhav.lld.design.SchemaDesign.pen.constants.PenType;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.experimental.SuperBuilder;
 
 @AllArgsConstructor
 

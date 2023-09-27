@@ -1,6 +1,5 @@
 package com.vaibhav.lld.design.SchemaDesign.pen.impl;
 
-import com.vaibhav.lld.design.SchemaDesign.pen.Pen;
 import com.vaibhav.lld.design.SchemaDesign.pen.Refillable;
 import com.vaibhav.lld.design.SchemaDesign.pen.WritingBehaviour;
 import com.vaibhav.lld.design.SchemaDesign.pen.constants.INK;
@@ -8,6 +7,7 @@ import com.vaibhav.lld.design.SchemaDesign.pen.constants.PenType;
 import com.vaibhav.lld.design.SchemaDesign.pen.constants.RefillType;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Nib;
 import com.vaibhav.lld.design.SchemaDesign.pen.model.Refill;
+import com.vaibhav.lld.design.SchemaDesign.pen.Pen;
 import lombok.Getter;
 
 import java.util.Objects;
@@ -16,7 +16,7 @@ import java.util.Objects;
 @Getter
 public class GelPen extends Pen implements Refillable {
     private Refill refill;
-    private GelPen(String name, double cost, WritingBehaviour writingBehaviour, Nib nib,INK ink,boolean refillable) {
+    private GelPen(String name, double cost, WritingBehaviour writingBehaviour, Nib nib, INK ink, boolean refillable) {
         super(name, cost, PenType.GELPEN, writingBehaviour);
         this.refill=getRefill(nib,ink,refillable);
     }

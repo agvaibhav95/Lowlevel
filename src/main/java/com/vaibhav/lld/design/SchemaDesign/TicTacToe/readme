@@ -1,0 +1,70 @@
+tic tac toe is a3x3 board game where two people are assigned with x or 0 respectively
+
+requirements:-
+what is the size of board?-nxn
+2 plyers or more--> 2 player(human or bot)
+types of symbol--x,0
+can a player with a bot play -- yes
+how does a player win   ---> whenever three consicutive same symbol in a row,col or on diagnol.
+tie---> when all cells are filled and no one wins then draw.
+who starts the game----> randomly
+once game started then turn by turn game will procedd.
+
+human player will have a photo name and email
+bot will have difficulty level
+
+
+
+future scope
+can there be multiple ways to win a game --yes some zigzag
+
+===========================================================
+
+scaler questions
+
+
+
+Questions to Ask
+
+Will the game be played amongst only 2 players or can there be any number of players in future?
+Is the board size restricted to 3x3 or can it be any NxN?
+Can there be different ways to win?
+Can one of the players be a bot?
+
+Feature Suggestions:
+
+Do we want to time a move? Skip/ Declare the other person as winner if the move doesn’t happen within x seconds.
+Do we want to support undo operation?
+Can there be some players who are just watching? Not playing.
+Do we want to store analytics? Basically previous games, who played what move etc.
+Support for tournaments? Basically a set of matches, each match between 2 players of the tournament.
+
+Expectations
+
+The code should be working and functionally correct
+Good software design practices should be followed:
+Code should be modular, readable, extensible
+Separation of concern should be addressed
+Project structured well across multiple files/ packages
+Write unit tests
+No need of GUI
+
+
+Problem Requirements:-
+
+Board can be of any NxN size.
+There can be two players.
+Each player will be allotted a symbol.
+The symbol can be one of O and X.
+The players can be either humans or bots.
+Each human player will have a name, email and profile image.
+Each bot player will have a difficulty level.
+Any random player can start the game.
+Then the players will take turns alternatively.
+The player with any consecutive N symbols in a row, column or diagonal wins.
+If the board is full and no player has won, the game is a draw.
+
+
+
+///scaler has not written implemented winning rules as observer as when a move is made we need to check which all winning rules is satisfied.
+// they have done strategy which is wrong check the code.
