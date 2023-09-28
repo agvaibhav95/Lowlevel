@@ -1,6 +1,7 @@
 package com.vaibhav.lld.design.SchemaDesign.pen;
 
 import com.vaibhav.lld.design.SchemaDesign.TicTacToe.*;
+import com.vaibhav.lld.design.SchemaDesign.TicTacToe.factory.PlayerFactory;
 import com.vaibhav.lld.design.SchemaDesign.TicTacToe.flyweight.User;
 import org.junit.Test;
 
@@ -77,6 +78,27 @@ public class TicTacToeTest {
 
         Player player1= HumanPlayer.builder().id("1").symbol(Symbol.X).user(user).build();
         Player player2= HumanPlayer.builder().id("2").symbol(Symbol.O).user(user1).build();
+        Game game= Game.getBuilder().board(board).players(player1,player2).build();
+        game.startGame();
+        game.makeMove(player1, 1,2);
+        game.makeMove(player2, 0,2);
+        game.makeMove(player1, 1,1);
+        game.makeMove(player2, 0,1);
+        game.makeMove(player1, 0,0);
+        game.makeMove(player2, 1,0);
+        game.makeMove(player1, 2,0);
+        game.makeMove(player2, 2,2);
+        game.makeMove(player1, 2,1);
+    }
+
+    @Test
+    public void testGame6FactoryTie(){
+        User user=new User("Vaibhav","vaibhav@test.com",new byte[100]);
+        User user1=new User("abc","abcv@test.com",new byte[100]);
+        Board board=  Board.builder().x(3).y(3).build();
+
+        Player player1= PlayerFactory.getHumanPlayer().id("1").symbol(Symbol.X).user(user).build();
+        Player player2= PlayerFactory.getHumanPlayer().id("2").symbol(Symbol.O).user(user1).build();
         Game game= Game.getBuilder().board(board).players(player1,player2).build();
         game.startGame();
         game.makeMove(player1, 1,2);
