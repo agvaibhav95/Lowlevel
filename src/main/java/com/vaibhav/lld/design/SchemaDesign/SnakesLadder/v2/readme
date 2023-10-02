@@ -1,0 +1,31 @@
+problems with this design
+
+so we extracted same code of lines in abstract class
+and snake and ladder are their implementation classes
+now, when person moves how cell will know weather there is a snake or ladder there?
+
+so we have a cell value and we need to iterate in all the obstacles list weather which has from as cell value.
+suppose i get 5 now cell value is 10 as i was on 5 and will move 5 more.
+so i am at cell value 10 how to get weather there is a snake or ladder
+
+so we can have a map  which have integer key as cellValue and value as Obstacle
+instead of having a list
+and we can just get the obstacle by finding by key as cellValue -----> good design can we optimize this further
+and can we remove this map??
+yes by moving this in cell but why are we doing it?
+
+bcoz if we take a map solution while creating a board i have to made some checks such that no cell has more than
+one obstacle and if we add without any such check we will be getting an error with duplicate keys
+so we can have some optimizations to map related design
+
+so removing map of obstacles from board as we can run into duplicate key exception bcoz cell will have only
+one obstacle and then we have to add some validations to it.
+so, instead of obstacle map we can have Obstacle field in cell as there will be a single obstacle.
+check v3 package
+
+but there is one issue---> not all cells have obstacle and if cell have no obstacle then that field is null in case
+of no obstacle. so we have to make null checks
+what if we can have a dummy obstacle which has same from and to and then there is no need of creating null validations
+
+
+

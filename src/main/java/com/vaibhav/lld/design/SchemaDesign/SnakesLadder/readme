@@ -1,0 +1,11 @@
+snakes and ladder
+there is a board (nxN)which has snakes and ladders which has from and to cell position
+there are n players which can play this game
+there is a dice which rolls and player has to move that steps on board
+can a player be assigned with piece and a player can have multiple pieces
+only human players
+rules for starting a game --->1 or 6(max no of dice)
+one dice but in future we can have multiple dice
+winning game--> who reaches the end of board first all piece of that person
+if n-1 player reaches the end then game will only stop.
+leader board where each player ranking will be shown

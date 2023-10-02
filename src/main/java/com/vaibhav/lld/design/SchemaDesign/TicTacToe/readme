@@ -68,3 +68,7 @@ If the board is full and no player has won, the game is a draw.
 
 ///scaler has not written implemented winning rules as observer as when a move is made we need to check which all winning rules is satisfied.
 // they have done strategy which is wrong check the code.
+
+future requirement:-
+
+undo move-----> so we can store all the moves in a stack
