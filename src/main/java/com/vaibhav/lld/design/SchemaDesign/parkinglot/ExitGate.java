@@ -1,21 +1,27 @@
 package com.vaibhav.lld.design.SchemaDesign.parkinglot;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
-public class ExitGate {
+@Setter
+public class ExitGate extends Gate {
     private PaymentCounter paymentCounter;
-    private ParkingAttendant attendant;
 
-
-
-    public void collectPayement(Ticket ticket){
-        ticket.setPayed(true);
+    public ExitGate(ParkingAttendant parkingAttendant) {
+        super(parkingAttendant);
     }
-    public void collectPayment(Ticket ticket){
-        if(!ticket.isPayed()){}
+
+
+    public void collectPayement(Ticket ticket) {
+
     }
-    public boolean checkout(Ticket ticket){return ticket.isPayed();}
+
+    public void collectPayment(Ticket ticket) {
+
+    }
+
+    public boolean checkout(Ticket ticket) {
+        return false;
+    }
 }

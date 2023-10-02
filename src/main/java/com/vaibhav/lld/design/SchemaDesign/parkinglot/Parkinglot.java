@@ -3,13 +3,13 @@ package com.vaibhav.lld.design.SchemaDesign.parkinglot;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.List;
 @Getter
 @AllArgsConstructor
 public class Parkinglot {
-    private List<EntryGate> entryPointList;
-    private List<ExitGate> exitPointList;
-    private DisplayBoard displayBoard;
+    private Gate[] entryGates;
+    private Gate[] exitGates;
+    //private DisplayBoard displayBoard;
+    // as we do have multiple entry gates and it is better to have this at each entry level in order to assign
     private Floor[] floors;
     private String id;
     private String name;

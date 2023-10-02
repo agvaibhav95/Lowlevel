@@ -7,7 +7,10 @@ public class Vehicle {
     private String regNo;
     private VehicleType vehicleType;
 
-    public void makePayment(Ticket ticket){}
-    public void getTicket(){}
+    public void makePayment(Ticket ticket) {
+    }
+
+    public void getTicket() {
+    }
 }
 
