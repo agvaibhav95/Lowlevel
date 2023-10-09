@@ -1,0 +1,42 @@
+Library management systems also involve maintaining the database for entering
+ new books and recording books that have been borrowed with their respective due dates.
+
+
+ user can issue a book for som time period
+ admin can add more books
+ user can search books on the basis of their category or on the basis of their author name
+ librarian can check the availablity of the book
+ each book can have more than 1 copy
+ if available he/she can get the book with specified shelf and row number
+ he/she can issue a book and can reserve a book
+
+if book is not available then user can reserve a book
+and system will notify once it is available
+
+
+user can issue max 5 books
+user can hold a book for 10 days
+
+
+ if user returns a book then
+ charges day wise
+ charging on the basis of defaulter level
+
+
+actors
+=============
+1. librarian
+add more books
+reserve a book
+issue a book
+
+2.customer
+search for a book
+pay fine
+
+4. system
+sends notification
+
+class Diagram
+---------------------
+

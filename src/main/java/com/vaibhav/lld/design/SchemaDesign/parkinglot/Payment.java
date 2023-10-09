@@ -3,13 +3,17 @@ package com.vaibhav.lld.design.SchemaDesign.parkinglot;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
 @Getter
 @AllArgsConstructor
 @Setter
+@NoArgsConstructor
+
 public abstract class Payment {
     private PaymentType paymentType;
     private Date date;

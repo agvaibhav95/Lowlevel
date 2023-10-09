@@ -1,0 +1,30 @@
+    private Map<K,V> hashmap=new HashMap<>();
+    // diff threads will have diff values so data inconsistency
+
+    so we need to have locking implemented
+    1. one way to do by synch keyword in all methods --> very slow
+    2. lock --> same slow
+    3. we can use atomic data types which does locking on buckets instead of taking lock on whole object
+
+    // so just change this to concurrent hashmap
+
+    now we have diff types of policies
+    each policy require some methods like lru needs last time fifo needs first entry timestamp
+    so we will do something like this:
+    get(Key key){
+    update Time()
+    }
+    for lfu  --> freq
+    get(key key){
+    updateFreq()
+    }
+    for FIFO
+    get(key key){
+    updateEntryTime()}
+
+
+  so we have diff eviction policies which user can decide at runtime so we will use strategy for eviction policies
+  expiry.
+
+  what about when there is get and update method call or delete call then we have to add in each policy as user
+  can decide which policy to use at runtime.--->observer

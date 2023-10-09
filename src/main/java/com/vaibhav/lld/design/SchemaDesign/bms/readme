@@ -1,0 +1,79 @@
+Requirements gathering
+What are some questions you would ask to gather requirements?
+
+Can a cinema hall have multiple screens/halls?
+Can a movie be shown in multiple halls?
+Can a movie be of multiple languages?
+Can a user book multiple tickets for a single movie?
+Are there multiple types of tickets?
+How does user find a movie?
+How does a user book a ticket?
+How does a user pay for a ticket?
+How does a new movie get added to the system?
+Are there any discounts available?
+
+
+
+
+-------------------------------------------------------------
+
+Requirements
+-------------------------------------
+Build an online movie ticket booking system that can support the following requirements:
+
+Support for multiple cities
+Each city will have multiple cinemas
+Each cinema can have multiple halls
+Each hall will play one movie at a time
+A cinema will play multiple movies
+Each hall can have multiple types of seats
+GOLD
+DIAMOND
+PLATINUM
+Allow the user to search a movie by name
+Allow the user to filter movies by the following fields
+Location
+Cinema
+Language
+Rating
+Category
+Each movie can have multiple shows
+Users can book tickets and pay via multiple payment methods
+UPI
+Credit Card
+Netbanking
+A user can apply a coupon or a promo code at checkout
+A user can see the availability of seats in a hall
+The price of a ticket will be decided by multiple parameters
+Seat Type
+Day of the week
+Time of the Day
+Movie
+Cinema hall
+A user can also cancel or update a booking
+A user cannot book or cancel after the cutoff time which is 1 hour before the movie starts
+
+
+
+
+
+
+now use case diagram:-
+actors in a system
+1. admin
+
+admin can add city
+admin can add theatre
+admin can add halls
+admin can add movie
+all crud operation on mentioned above.
+
+
+2. customer/user
+select a city---> get all the movies in a city
+or he can filter a movie by city -> get all movies on basis of city
+search for a movie
+get a movie
+book a ticket
+pay by cash,upi,card
+cancel a ticket

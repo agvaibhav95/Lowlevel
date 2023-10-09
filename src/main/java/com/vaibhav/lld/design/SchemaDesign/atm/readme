@@ -1,0 +1,115 @@
+an atm is used to
+ cash withdrawl
+ balance enquiry
+ cash deposit
+ pin reset
+
+ atm is a machine which takes card as input and card is validated by entering pin by user
+ if user enters a correct pin
+ User details is sent to bank for validation
+ he/she select the operation to perform which atm can do
+ transaction is init to bank to perform
+ user can select wheather he/she needs a receipt or not.
+ after performing operation user ejects a card and leave the atm.
+
+
+actors
+1. user/customer
+can withdraw cash
+can deposit money
+can reset pin
+can do bal enquiry
+2.admin
+can add cash
+can add more atm
+
+3. atm machine
+send the transaction to bank
+send validation req to bank
+
+entities
+-----------------
+atm
+cardreader
+screen
+buttons
+cashDispenser
+CashDepositSlot
+printer
+
+User<<abs>>
+extends customer
+extends admin
+
+
+Card
+transaction
+
+class diagram
+----------------
+
+atm
+------
+cardReader
+screen
+dispenser
+MAP<DENOMINATOR,NUMBER> cash
+printer
+
+
+CardReader
+-----------
+id
+cardScanner
+
+screen
+--------
+id
+pixels
+type
+
+
+
+CashDispenser extends dispenser
+-----------------------------
+id
+perform(Cash cash){}
+
+CashDepositSlot extends dispenser
+-------------------------------
+id
+perform(Cash cash){
+}
+
+User<<abs>>
+---------------
+id
+type
+name
+email
+mobNo
+
+
+customer extends User
+---------------------------
+accDetails
+status
+
+
+admin extends User
+----------------------
+
+
+transaction
+---------------
+id
+atm
+user
+amount
+
+
+printer
+---------
+id
+ink
+print()
