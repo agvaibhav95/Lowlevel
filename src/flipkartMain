@@ -1,0 +1,64 @@
+package com.flipkart.upi;
+
+import com.flipkart.upi.constants.ServerStatus;
+import com.flipkart.upi.constants.UserStatus;
+import com.flipkart.upi.database.*;
+import com.flipkart.upi.models.UserTransactionLog;
+import com.flipkart.upi.models.request.SearchRequest;
+import com.flipkart.upi.service.*;
+import com.flipkart.upi.service.strategy.PayeePayerSearch;
+import com.flipkart.upi.service.strategy.SearchTxnHistory;
+
+import java.util.List;
+
+
+public class Main {
+    private static BankRepo bankRepo=new BankRepo();
+    private static UserRepo userRepo=new UserRepo();
+    private static PaymentRepo paymentRepo=new PaymentRepo();
+    private static UserBankRepo userBankRepo=new UserBankRepo();
+    private static UserUpiAccRepo userUpiAccRepo=new UserUpiAccRepo();
+
+    private static BankService bankService=new BankService(bankRepo);
+    private static SearchTxnHistory searchTxnHistory=new PayeePayerSearch();
+    private static SearchTxnHistoryService searchTxnHistoryService=new SearchTxnHistoryService(paymentRepo,searchTxnHistory);
+    private static UserService userService= new UserService(userRepo);
+    private static PaymentService paymentService=new PaymentService(paymentRepo,userRepo,bankRepo,userUpiAccRepo,userBankRepo);
+    private static UserBankLinkingService userBankLinkingService=new UserBankLinkingService(userRepo,bankRepo,userBankRepo);
+    private static UserBankUPIAccountService userBankUPIAccountService=new UserBankUPIAccountService(userRepo,bankRepo,userUpiAccRepo,userBankLinkingService);
+
+    public static void main(String[] args) {
+	// write your code here
+        userService.createUser("vaibhav","8585919384",UserStatus.ACTIVE);
+        userService.createUser("vaibhav1","8585919385",UserStatus.ACTIVE);
+        userService.createUser("vaibhav2","8585919389",UserStatus.ACTIVE);
+        bankService.registerBank("1","hdfc", ServerStatus.UP);
+        bankService.registerBank("2","icici", ServerStatus.UP);
+        bankService.registerBank("3","indus", ServerStatus.DOWN);
+        userBankLinkingService.linkBankAccount("8585919384","123",100.0,"1");
+        userBankLinkingService.linkBankAccount("8585919384","124",100.0,"2");
+        userBankLinkingService.linkBankAccount("8585919384","125",100.0,"3");
+        userBankLinkingService.linkBankAccount("8585919385","126",100.0,"3");
+        userBankLinkingService.linkBankAccount("8585919385","127",100.0,"2");
+        userBankLinkingService.linkBankAccount("8585919389","128",100.0,"2");
+
+        userBankUPIAccountService.makeAccountNoPrimaryForUPI("8585919385","127","2");
+     //   userBankUPIAccountService.makeAccountNoPrimaryForUPI("8585919385","126","3");
+        userBankUPIAccountService.makeAccountNoPrimaryForUPI("8585919384","123","1");
+        userBankUPIAccountService.makeAccountNoPrimaryForUPI("8585919389","128","2");
+        paymentService.makePayment("8585919384","8585919385",1);
+        paymentService.makePayment("8585919384","8585919389",1);
+        paymentService.makePayment("8585919384","8585919385",1);
+        paymentService.makePayment("8585919384","8585919385",1);
+        paymentService.makePayment("8585919384","8585919385",1);
+        paymentService.makePayment("8585919385","8585919384",1);
+        paymentService.makePayment("8585919385","8585919384",1);
+        SearchRequest searchRequest=new SearchRequest();
+        searchRequest.setUserId("8585919384");
+        searchRequest.setSearchPhoneNo("8585919389");
+        searchTxnHistoryService.search(searchRequest);
+        searchRequest.setSearchPhoneNo("8585919385");
+        searchTxnHistoryService.search(searchRequest);
+
+    }
+}
